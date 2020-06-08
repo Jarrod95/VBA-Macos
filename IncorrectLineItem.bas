@@ -35,6 +35,3 @@ End With
 MsgBox num & " jobs with incorrect line items"
 
 End Sub
-
-
-
