@@ -1,6 +1,3 @@
-Attribute VB_Name = "Module1"
-Option Explicit
-
 Sub IncorrectLineItem()
 Dim LastRow As Long
 Dim cell As Range
