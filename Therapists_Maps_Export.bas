@@ -2,6 +2,8 @@ Sub Therapist_Maps_Export()
 Dim n As Long
 Dim LastRow As Integer
 Dim i As Integer
+Dim retVal As Long
+    Dim fileSaveName As Variant
     Sheets.Add(After:=Sheets(1)).Name = "Expired"
     Worksheets(1).Select
     ActiveSheet.Name = "Active"
@@ -40,4 +42,5 @@ Dim i As Integer
     ActiveWorkbook.Close
     Application.ScreenUpdating = True
     MsgBox "New Spreadsheets created in" & vbCrLf & vbCrLf & "OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data"
+    retVal = Shell("explorer.exe C:\Users\info\OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data", vbNormalFocus)
 End Sub
