@@ -33,11 +33,11 @@ Dim retVal As Long
     Next i
     Application.Wait (Now + TimeValue("0:00:03"))
     Sheets(1).Copy
-    ActiveWorkbook.SaveAs "C:\Users\info\OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data\Active-Therapists_" & _
+    ActiveWorkbook.SaveAs "C:\Users\%USERPROFILE%\OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data\Active-Therapists_" & _
     Format(Date, "dd-mm-yyyy") & ".xlsx"
     ActiveWorkbook.Close
     Sheets(2).Copy
-    ActiveWorkbook.SaveAs "C:\Users\info\OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data\Expired-Therapists_" & _
+    ActiveWorkbook.SaveAs "C:\Users\%USERPROFILE%\OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data\Expired-Therapists_" & _
     Format(Date, "dd-mm-yyyy") & ".xlsx"
     ActiveWorkbook.Close
     Application.ScreenUpdating = True
