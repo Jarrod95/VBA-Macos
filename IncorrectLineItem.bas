@@ -26,6 +26,9 @@ For Each cell In Range("I2:I" & LastRow)
     End If
 Next cell
 num = Application.WorksheetFunction.CountIf(Range("Q2:Q" & LastRow), "TRUE")
+Range("B:C,F:H").EntireColumn.AutoFit
+Columns("A").ColumnWidth = 9
+Columns("D").ColumnWidth = 30
 With ActiveSheet.Sort
     .SortFields.Add Key:=Range("Q2"), Order:=xlDescending
     .SetRange Range("A1:Q" & LastRow)
