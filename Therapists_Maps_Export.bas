@@ -42,5 +42,5 @@ Dim retVal As Long
     ActiveWorkbook.Close
     Application.ScreenUpdating = True
     MsgBox "New Spreadsheets created in" & vbCrLf & vbCrLf & "OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data"
-    retVal = Shell("explorer.exe C:\Users\info\OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data", vbNormalFocus)
+    retVal = Shell("explorer.exe C:\Users\%USERPROFILE%\OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data", vbNormalFocus)
 End Sub
