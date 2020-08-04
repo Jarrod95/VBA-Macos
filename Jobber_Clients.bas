@@ -6,9 +6,9 @@ Dim Rng As Long
     Sheets.Add(After:=Sheets(1)).Name = "New Clients"
     Worksheets(1).Select
     ActiveSheet.Name = "Existing Clients"
-    Range("A:D,F:F,I:J,L:Y,AA:AA,AD:AJ,AM:AN,AU:AZ").EntireColumn.Delete
+    Range("A:D,F:F,I:J,L:AI,AL:AL,AO:AO,AU:AU,AX:AY,BF:BL").EntireColumn.Delete
     With ActiveSheet
-        Range("A2:Q" & LastRow).RemoveDuplicates Columns:=Array(1, 2), _
+        Range("A2:U" & LastRow).RemoveDuplicates Columns:=Array(1, 2), _
         Header:=xlYes
     End With
     Range("E1") = "Age"
@@ -27,13 +27,13 @@ Dim Rng As Long
         .Replace "*Hold*", "=1", xlWhole
         .SpecialCells(xlFormulas).EntireRow.Delete
     End With
-    Worksheets(1).Range("A1:O1").Copy _
+    Worksheets(1).Range("A1:U1").Copy _
     Destination:=Worksheets(2).Range("A1")
     Application.ScreenUpdating = False
     Range("D2:D" & Range("D" & Rows.Count).End(3)(1).Row).AutoFilter 1, "*New*"
-    Range("A2:O" & Range("A" & Rows.Count).End(3)(1).Row).SpecialCells(xlCellTypeVisible).Copy _
+    Range("A2:U" & Range("A" & Rows.Count).End(3)(1).Row).SpecialCells(xlCellTypeVisible).Copy _
     Sheets(2).Cells(Rows.Count, "A").End(xlUp).Offset(1)
-    Range("A2:O" & Range("A" & Rows.Count).End(3)(1).Row).SpecialCells(xlCellTypeVisible).Delete Shift:=xlUp
+    Range("A2:U" & Range("A" & Rows.Count).End(3)(1).Row).SpecialCells(xlCellTypeVisible).Delete Shift:=xlUp
     Application.Wait (Now + TimeValue("0:00:03"))
     ActiveSheet.AutoFilterMode = False
     Sheets(1).Copy
@@ -46,5 +46,5 @@ Dim Rng As Long
     ActiveWorkbook.Close
     Application.ScreenUpdating = True
     MsgBox "New Spreadsheets created in" & vbCrLf & vbCrLf & "OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data"
-    retVal = Shell("explorer.exe C:\Users\%USERPROFILE%\OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data", vbNormalFocus)
+    retVal = Shell("explorer.exe C:\Users\" & Environ("username") & "\OneDrive\1. M2M Administration\EXPORTED FROM SOFTWARE\Maps Data", vbNormalFocus)
 End Sub
