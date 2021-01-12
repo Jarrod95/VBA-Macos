@@ -41,16 +41,5 @@ Dim EndRow As Range
     Set Residents = Sheets("Residents").Range(StartRow, EndRow)
     'Residents.Copy (Sheets("Sheet1").Range("A1")) 'Work out how to paste back into cleaned spredsheet
     Sheets("Residents").Cells.Clear
-
-    End Sub
-
-    Sub Testsheet()
-    Dim wks As Worksheet, strName As String
-    'Finds 'Payment Statement' Sheet and stamps it with today's date
-    For Each wks In Worksheets
-        If wks.Name Like "Payment Statement" Then
-            Debug.Print wks.Name
-            wks.Name = "Payment Statement_" & Format(Date, "dd-mm-yy")
-        End If
-    Next
+                
 End Sub
